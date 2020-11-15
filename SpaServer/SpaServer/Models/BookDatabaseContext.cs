@@ -18,28 +18,11 @@ namespace SpaServer.Models
         public virtual DbSet<Authors> Authors { get; set; }
         public virtual DbSet<Books> Books { get; set; }
 
-       
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Authors>(entity =>
-            {
-                entity.HasKey(e => e.AuthorId);
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Books>(entity =>
             {
-                entity.HasKey(e => e.BookId);
-
-                entity.Property(e => e.Title)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
+              entity.HasIndex(e => e.AuthorId);
             });
 
             OnModelCreatingPartial(modelBuilder);

@@ -19,14 +19,17 @@ namespace SpaServer
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            ConnectionString = Configuration.GetConnectionString("BooksDB");
         }
 
         public IConfiguration Configuration { get; }
+        public static string ConnectionString { get; private set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<BookDatabaseContext>()
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
