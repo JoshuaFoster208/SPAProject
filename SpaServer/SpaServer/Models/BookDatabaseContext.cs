@@ -1,10 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace SpaServer.Models
 {
-    public partial class BookDatabaseContext : DbContext
+  public partial class BookDatabaseContext : DbContext
     {
         public BookDatabaseContext()
         {

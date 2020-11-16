@@ -10,8 +10,6 @@ namespace SpaServer.Models
         [Key]
         public int BookId { get; set; }
         public int AuthorId { get; set; }
-        [Required]
-        [StringLength(100)]
         public string Title { get; set; }
 
         [ForeignKey(nameof(AuthorId))]
