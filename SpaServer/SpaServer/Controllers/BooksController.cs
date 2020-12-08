@@ -22,7 +22,10 @@ namespace SpaServer.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Books>>> GetBooks()
         {
-            return await _context.Books.ToListAsync();
+
+            List<Books> list = new List<Books>();
+                list = await _context.Books.ToListAsync();
+            return list;
         }
 
         // GET: api/Books/5
@@ -32,16 +35,16 @@ namespace SpaServer.Controllers
             Books book = await _context.Books.FindAsync(id);
             Authors author = await _context.Authors.FindAsync(id);
 
-      if (book == null)
+            if (book == null)
+                  {
+                      return NotFound();
+                  }
+            BooksDto bookDto = new BooksDto
             {
-                return NotFound();
-            }
-      BooksDto bookDto = new BooksDto
-      {
-        BookId = book.BookId,
-        Title = book.Title,
-        AuthorName = author.Name
-        };
+              BookId = book.BookId,
+              Title = book.Title,
+              AuthorName = author.Name
+            };
             return bookDto;
         }
 

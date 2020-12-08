@@ -24,7 +24,8 @@
     "import-spacing": true,
     "indent": {
       "options": [
-        "spaces"
+        "spaces",
+        "tab"
       ]
     },
     "max-classes-per-file": false,
@@ -83,7 +84,7 @@
       }
     },
     "typedef": [
-      true,
+      false,
       "call-signature"
     ],
     "typedef-whitespace": {
@@ -102,6 +103,7 @@
           "property-declaration": "onespace",
           "variable-declaration": "onespace"
         }
+
       ]
     },
     "variable-name": {
