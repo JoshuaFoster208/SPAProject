@@ -1,5 +1,6 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {Book} from './Book';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BooksByAuthorService} from './BooksByAuthorService';
 import {SelectedAuthor} from './SelectedAuthor';
 import {Subscription} from 'rxjs';
@@ -9,8 +10,10 @@ import {Subscription} from 'rxjs';
   templateUrl: './BooksByAuthor.html',
   providers:  [ BooksByAuthorService , SelectedAuthor]
 })
+
 export class BooksByAuthorComponents implements OnInit,OnChanges {
   books: Subscription;
+  @Input() responseId: number;
 
   constructor(private service: BooksByAuthorService, private service2: SelectedAuthor) {
   }
@@ -20,7 +23,7 @@ export class BooksByAuthorComponents implements OnInit,OnChanges {
   }
 
   ngOnChanges(){
-    this.books = this.service.getBooksByAuthor(this.service2.getSelectedAuthor()).subscribe(books => this.books = books);
+    this.books = this.service.getBooksByAuthor(this.responseId).subscribe(books => this.books = books);
   }
 
 }

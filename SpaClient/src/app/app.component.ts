@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',

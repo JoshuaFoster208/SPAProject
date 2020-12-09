@@ -4,6 +4,7 @@ import {AuthorsService} from './AuthorsService';
 import {SelectedAuthor} from './SelectedAuthor';
 import {Subscription} from 'rxjs';
 import {Book} from './Book';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'authorsList',
@@ -12,6 +13,7 @@ import {Book} from './Book';
 })
 export class AuthorsComponent implements OnInit {
   authors: Subscription;
+  authId = 0;
 
   constructor(private service: AuthorsService, private service2: SelectedAuthor) {
   }
@@ -23,6 +25,7 @@ export class AuthorsComponent implements OnInit {
   selectedAuthor: Author;
   onSelect(selAuthor: Author): void {
     this.selectedAuthor = selAuthor;
+    this.authId =selAuthor.authorId;
     this.service2.setSelectedAuthor(selAuthor.authorId);
   }
 

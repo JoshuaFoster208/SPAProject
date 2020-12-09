@@ -5,5 +5,5 @@
 <div *ngIf="selectedAuthor">
   <h2>{{selectedAuthor.name | uppercase}} Details</h2>
   <div><span>id: </span>{{selectedAuthor.authorId}}</div>
-  <booksByAuthorList></booksByAuthorList>
+  <booksByAuthorList [responseId]="authId"></booksByAuthorList>
 </div>
