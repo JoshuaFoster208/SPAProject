@@ -1,3 +1,4 @@
+<app-authentication-button></app-authentication-button>
 <div>
   <select name="Choice">
     <option value="Authors">Authors</option>
@@ -6,14 +7,14 @@
   <input type="text" placeholder="Search..">
 </div>
 <div>
+  <div (click)="setSelectedTab('authors')">Authors
+    <div *ngIf="selectedTab=='authors'">
+      <authorsList></authorsList>
+    </div>
+  </div>
   <div (click)="setSelectedTab('books')">Books
     <div *ngIf="selectedTab=='books'">
     <booksList></booksList>
-    </div>
-  </div>
-  <div (click)="setSelectedTab('authors')">Authors
-    <div *ngIf="selectedTab=='authors'">
-    <authorsList></authorsList>
     </div>
   </div>
 </div>

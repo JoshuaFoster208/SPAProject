@@ -47,7 +47,7 @@ namespace SpaServer.Controllers
               BookId = book.BookId,
               Title = book.Title,
               Pages = book.Pages,
-              //Price = book.Price,
+              Price = book.Price,
               AuthorName = author.Name
             };
             return bookDto;
