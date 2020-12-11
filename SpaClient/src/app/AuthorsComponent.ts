@@ -24,9 +24,16 @@ export class AuthorsComponent implements OnInit {
 
   selectedAuthor: Author;
   onSelect(selAuthor: Author): void {
-    this.selectedAuthor = selAuthor;
-    this.authId =selAuthor.authorId;
-    this.service2.setSelectedAuthor(selAuthor.authorId);
+    if(this.selectedAuthor != selAuthor) {
+      this.selectedAuthor = selAuthor;
+      this.authId = selAuthor.authorId;
+      this.service2.setSelectedAuthor(selAuthor.authorId);
+    }
+    else{
+      this.selectedAuthor = null;
+      this.authId = 0;
+      this.service2.setSelectedAuthor(0);
+    }
   }
 
 }

@@ -6,7 +6,8 @@ import {Injectable} from '@angular/core';
 })
 
 export class BooksService {
-	private books = 'https://localhost:44396/api/Books';
+	private books = 'http://52.53.203.248/Borders/api/Books';
+
 
 	//books
 	constructor(

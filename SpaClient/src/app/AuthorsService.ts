@@ -6,7 +6,7 @@ import {Injectable} from '@angular/core';
 })
 
 export class AuthorsService {
-  private authors = 'https://localhost:44396/api/Authors';
+  private authors = 'http://52.53.203.248/Borders/api/Authors';
 
   //authors
   constructor(

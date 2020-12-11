@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 })
 export class AppComponent {
   title = 'SpaClient';
+  selectedTab = "authors";
   baseUrl = 'https://localhost:44396/';
   public forecasts: WeatherForecast[];
 
@@ -16,6 +17,10 @@ export class AppComponent {
     http.get<WeatherForecast[]>(this.baseUrl + 'weatherforecast').subscribe(result => {
       this.forecasts = result;
     }, error => console.error(error));
+  }
+
+  setSelectedTab(selected: string){
+    this.selectedTab = selected;
   }
 }
 

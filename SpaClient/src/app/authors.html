@@ -1,9 +1,16 @@
-<ul>
-  <li *ngFor="let author of authors"(click)="onSelect(author)">{{author.name}}, {{author.authorId}}</li>
-</ul>
+
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Number of Books</th>
+  </tr>
+  <tr *ngFor="let author of authors"(click)="onSelect(author)"><td>{{author.name}}</td> <td>{{author.authorId}}</td></tr>
+</table>
+
+
+
 
 <div *ngIf="selectedAuthor">
-  <h2>{{selectedAuthor.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedAuthor.authorId}}</div>
+  <h2>{{selectedAuthor.name}}</h2>
   <booksByAuthorList [responseId]="authId"></booksByAuthorList>
 </div>
