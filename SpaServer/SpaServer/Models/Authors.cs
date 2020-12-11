@@ -17,6 +17,7 @@ namespace SpaServer.Models
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
+        public int NumberOfBooks { get; set; }
 
         [InverseProperty("Author")]
         public virtual ICollection<Books> Books { get; set; }

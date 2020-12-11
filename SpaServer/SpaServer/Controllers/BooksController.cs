@@ -23,9 +23,12 @@ namespace SpaServer.Controllers
         public async Task<ActionResult<IEnumerable<Books>>> GetBooks()
         {
 
-            List<Books> list = new List<Books>();
-                list = await _context.Books.ToListAsync();
-            return list;
+            /*List<Books> books = new List<Books>();
+            List<Books> authors = new List<Books>();*/
+      //book = await _context.Books.Join(_context.Authors,AuthData => AuthData.AuthorId, _context.Books, BookData => BookData.AuthorId, (AuthData,BookData) => AuthData).OrderBy(data => data.Title).ToListAsync();
+        var books = await _context.Books.Include(e => e.Author).OrderBy(data => data.Title).ToListAsync();
+        //authors = await _context.Books.ToListAsync();
+      return books;
         }
 
         // GET: api/Books/5
@@ -33,16 +36,18 @@ namespace SpaServer.Controllers
         public async Task<ActionResult<BooksDto>> GetBooks(int id)
         {
             Books book = await _context.Books.FindAsync(id);
-            Authors author = await _context.Authors.FindAsync(id);
+            Authors author = await _context.Authors.FindAsync(book.AuthorId);
 
             if (book == null)
-                  {
-                      return NotFound();
-                  }
+                {
+                  return NotFound();
+                }
             BooksDto bookDto = new BooksDto
             {
               BookId = book.BookId,
               Title = book.Title,
+              Pages = book.Pages,
+              //Price = book.Price,
               AuthorName = author.Name
             };
             return bookDto;
