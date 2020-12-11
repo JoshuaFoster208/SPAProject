@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BooksComponent} from './BooksComponent';
-import {AuthorsComponent} from './AuthorsComponent';
-import {BooksByAuthorComponents} from './BooksByAuthorComponents'
+import {BooksComponent} from './components/books/BooksComponent';
+import {AuthorsComponent} from './components/authors/AuthorsComponent';
+import {BooksByAuthorComponents} from './components/booksbyauthor/BooksByAuthorComponents'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientTestingModule} from '@angular/common/http/testing';

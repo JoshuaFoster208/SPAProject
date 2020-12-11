@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Author} from './Author';
 import {AuthorsService} from './AuthorsService';
-import {SelectedAuthor} from './SelectedAuthor';
+import {SelectedAuthor} from './../../SelectedAuthor';
 import {Subscription} from 'rxjs';
-import {Book} from './Book';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
