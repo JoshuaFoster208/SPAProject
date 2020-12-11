@@ -9,12 +9,7 @@ import {Subscription} from 'rxjs';
   providers:  [ BooksService ]
 })
 export class BooksComponent implements OnInit {
-  book: Book = {
-    authorId: 0,
-    bookId: 0,
-    author: "Test",
-    title: "Best Book Ever"
-  }
+
 
   books: Subscription;
 

@@ -2,6 +2,8 @@
   <tr>
     <th>Title</th>
     <th>Author</th>
+    <th>Pages</th>
+    <th>Price</th>
   </tr>
-  <tr *ngFor="let book of books"><td>{{book.title}}</td> <td>{{book.author.name}}</td></tr>
+  <tr *ngFor="let book of books"><td>{{book.title}}</td> <td>{{book.author.name}}</td><td>{{book.pages}}</td> <td>{{book.price}}</td></tr>
 </table>
