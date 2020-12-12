@@ -8,6 +8,8 @@ const routes: Routes = [
   { path: 'booksByAuthor', component: BooksByAuthorComponents },
   { path: 'auth', component: AuthenticatedComponent},
   { path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
+  {path: '**', redirectTo:'home'},
 ];
 
 @NgModule({
