@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { environment as env } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import {AuthenticatedComponent } from './authenticated/authenticated.component';
+import {OAuthModule} from 'angular-oauth2-oidc';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {AuthenticatedComponent } from './authenticated/authenticated.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    OAuthModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
