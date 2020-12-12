@@ -1,5 +1,3 @@
-<app-authentication-button></app-authentication-button>
-
 <div id="app" class="d-flex flex-column h-100">
   <div class="container" *ngIf="auth.isLoading$ | async; else loaded">
     <app-loading></app-loading>
@@ -17,25 +15,3 @@
     <app-footer></app-footer>
   </ng-template>
 </div>
-
-
-<div>
-  <select name="Choice">
-    <option value="Authors">Authors</option>
-    <option value="Books">Books</option>
-  </select>
-  <input type="text" placeholder="Search..">
-</div>
-<div>
-  <div (click)="setSelectedTab('authors')">Authors
-    <div *ngIf="selectedTab=='authors'">
-      <authorsList></authorsList>
-    </div>
-  </div>
-  <div (click)="setSelectedTab('books')">Books
-    <div *ngIf="selectedTab=='books'">
-    <booksList></booksList>
-    </div>
-  </div>
-</div>
-

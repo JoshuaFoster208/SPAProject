@@ -14,6 +14,8 @@ import { SignupButtonComponent } from './components/signup-button/signup-button.
 import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
 import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
 import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
+import { AuthenticatedComponent } from './authenticated/authenticated.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { AuthNavComponent } from './components/auth-nav/auth-nav.component';
     SignupButtonComponent,
     LogoutButtonComponent,
     AuthenticationButtonComponent,
-    AuthNavComponent
+    AuthNavComponent,
+    AuthenticatedComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
