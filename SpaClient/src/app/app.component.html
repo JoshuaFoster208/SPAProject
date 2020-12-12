@@ -1,17 +1,21 @@
-<div id="app" class="d-flex flex-column h-100">
-  <div class="container" *ngIf="auth.isLoading$ | async; else loaded">
-    <app-loading></app-loading>
-  </div>
-
-  <ng-template #loaded>
-    <app-nav-bar></app-nav-bar>
-
-    <div class="container flex-grow-1">
-      <div class="mt-5">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
-
-    <app-footer></app-footer>
-  </ng-template>
+<div>
+  testing
+  <select name="Choice">
+    <option value="Authors">Authors</option>
+    <option value="Books">Books</option>
+  </select>
+  <input type="text" placeholder="Search..">
 </div>
+<div>
+  <div (click)="setSelectedTab('authors')">Authors
+    <div *ngIf="selectedTab=='authors'">
+      <authorsList></authorsList>
+    </div>
+  </div>
+  <div (click)="setSelectedTab('books')">Books
+    <div *ngIf="selectedTab=='books'">
+      <booksList></booksList>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

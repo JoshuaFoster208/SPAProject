@@ -8,12 +8,11 @@ const routes: Routes = [
   { path: 'booksByAuthor', component: BooksByAuthorComponents },
   { path: 'auth', component: AuthenticatedComponent},
   { path: 'home', component: HomeComponent},
-  {path: '', component: HomeComponent},
-  {path: '**', redirectTo:'home'},
-];
 
+];
+/*,{useHash:true}*/
 @NgModule({
-  imports:[RouterModule.forRoot(routes,{useHash:true})],
+  imports:[RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
