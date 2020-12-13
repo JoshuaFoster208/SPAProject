@@ -11,6 +11,7 @@ import { environment as env } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import {AuthenticatedComponent } from './authenticated/authenticated.component';
 import {OAuthModule} from 'angular-oauth2-oidc';
+//import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {OAuthModule} from 'angular-oauth2-oidc';
     HttpClientModule,
     OAuthModule.forRoot(),
   ],
-  providers: [],
+  providers: [],//{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

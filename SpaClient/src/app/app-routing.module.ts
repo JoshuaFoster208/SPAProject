@@ -4,6 +4,7 @@ import {BooksByAuthorComponents} from './components/booksbyauthor/BooksByAuthorC
 import  {AuthenticatedComponent} from './authenticated/authenticated.component';
 import  {HomeComponent} from './home/home.component';
 
+const CALLBACK_PATH = 'login/callback';
 const routes: Routes = [
   { path: 'booksByAuthor', component: BooksByAuthorComponents },
   { path: 'auth', component: AuthenticatedComponent},
@@ -12,7 +13,7 @@ const routes: Routes = [
 ];
 /*,{useHash:true}*/
 @NgModule({
-  imports:[RouterModule.forRoot(routes,{useHash:true})],
+  imports:[RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
