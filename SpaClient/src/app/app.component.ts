@@ -22,8 +22,7 @@ export class AppComponent {
   title = 'SpaClient';
   selectedTab = "authors";
   baseUrl = 'https://localhost:44396/';
-  statusClass1 = 'active';
-  statusClass2 = 'not-active';
+
 
   constructor(http: HttpClient, private oauthService: OAuthService, ) {
     this.oauthService.configure(authConfig);
@@ -57,6 +56,8 @@ export class AppComponent {
     this.selectedTab = selected;
   }
 
+  statusClass1 = 'active';
+  statusClass2 = 'not-active';
   /*flips the activated tab*/
   setActiveClass1(){
     this.statusClass1 = 'active';
