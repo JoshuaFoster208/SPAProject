@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-authenticated',
@@ -15,4 +17,5 @@ export class AuthenticatedComponent implements OnInit {
   setSelectedTab(selected: string){
     this.selectedTab = selected;
   }
+
 }

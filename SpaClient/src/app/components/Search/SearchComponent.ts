@@ -24,11 +24,12 @@ export class SearchComponent implements OnInit {
 
   ngOnChanges() {
     this.test = false;
+    this.books = this.service.getBooks(this.searchValue).subscribe(books => this.books = books);
   }
 
     runSearch(){
-
-    //this.searchValue.setValue('');
+      this.books = this.service.getBooks(this.searchValue).subscribe(books => this.books = books);
+      this.searchValue.setValue('');
     this.test=true;
   }
 

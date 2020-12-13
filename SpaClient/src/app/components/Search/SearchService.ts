@@ -7,7 +7,7 @@ import {FormControl} from '@angular/forms';
 })
 
 export class SearchService {
-  private books = 'http://52.53.203.248/Borders/api/SearchBooks/harry';
+  private books = 'http://52.53.203.248/Borders/api/SearchBooks';
 
 
   //books
@@ -16,6 +16,6 @@ export class SearchService {
   {}
 
   getBooks(title: FormControl) {
-    return this.service.sendGetRequest(this.books);
+    return this.service.sendGetRequest(this.books + '/' + title);
   }
 }

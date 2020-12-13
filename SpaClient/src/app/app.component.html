@@ -2,13 +2,18 @@
   <button (click)="logout()">Logout</button>
   <h1>Hello, {{getUserName()}}</h1>
 </div>
+<div class="container>">
+<a *ngIf="selectedTab=='admin'" routerLink="" (click)="setSelectedTab('authors')"><button style="margin-right: 50%" class="btn btn-success pull-right" >Return</button></a>
+</div>
 <div *ngIf="!getUserName()">
   <button (click)="login()">Login</button>
 </div>
 
 <div *ngIf="selectedTab!='admin'" >
-  <div *ngIf="getUserName()">
-    <a routerLink="/auth" (click)="setSelectedTab('admin')"><button class="btn btn-success pull-right" >Admin Tools</button></a>
+  <div *ngIf="getUserName()" class="container">
+    <br>
+    <a routerLink="/auth" (click)="setSelectedTab('admin')"><button style="margin-right: 50%" class="btn btn-success pull-right" >Admin Tools</button></a>
+    <br>
   </div>
   <SearchBooks></SearchBooks>
   <div>

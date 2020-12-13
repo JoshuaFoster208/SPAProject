@@ -4,12 +4,11 @@ import {BooksByAuthorComponents} from './components/booksbyauthor/BooksByAuthorC
 import  {AuthenticatedComponent} from './authenticated/authenticated.component';
 import  {HomeComponent} from './home/home.component';
 
-const CALLBACK_PATH = 'login/callback';
 const routes: Routes = [
   { path: 'booksByAuthor', component: BooksByAuthorComponents },
   { path: 'auth', component: AuthenticatedComponent},
   { path: 'home', component: HomeComponent},
-
+  { path: '', redirectTo: '/', pathMatch: 'full'},
 ];
 /*,{useHash:true}*/
 @NgModule({

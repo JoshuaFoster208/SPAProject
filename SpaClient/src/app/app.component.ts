@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {OAuthService, AuthConfig} from 'angular-oauth2-oidc';
+import { Router } from '@angular/router';
+
 
 export const authConfig: AuthConfig ={
   issuer : 'https://dev-8515262.okta.com/oauth2/default',
@@ -19,7 +21,7 @@ export class AppComponent {
   selectedTab = "authors";
   baseUrl = 'https://localhost:44396/';
 
-  constructor(http: HttpClient, private oauthService: OAuthService) {
+  constructor(http: HttpClient, private oauthService: OAuthService, ) {
     this.oauthService.configure(authConfig);
     this.oauthService.loadDiscoveryDocumentAndTryLogin();
     this.oauthService.oidc = true;
@@ -57,6 +59,9 @@ export class AppComponent {
     this.statusClass1 = 'not-active';
     this.statusClass2 = 'active';
   }
+
+
+
 }
 
 

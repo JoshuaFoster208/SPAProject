@@ -4,7 +4,7 @@
     <option value="Authors">Authors</option>
     <option value="Books">Books</option>
   </select>
-  <input type="text" placeholder="Search..">
+  <input type="text" placeholder="Search.." [formControl]="searchValue">
   <button (click)="runSearch()">Search</button>
 
   <table class="table table-bordered">
