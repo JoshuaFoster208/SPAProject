@@ -46,6 +46,17 @@ export class AppComponent {
   setSelectedTab(selected: string){
     this.selectedTab = selected;
   }
+
+  statusClass1 = 'active';
+  statusClass2 = 'not-active';
+  setActiveClass1(){
+    this.statusClass1 = 'active';
+    this.statusClass2 = 'not-active';
+  }
+  setActiveClass2(){
+    this.statusClass1 = 'not-active';
+    this.statusClass2 = 'active';
+  }
 }
 
 

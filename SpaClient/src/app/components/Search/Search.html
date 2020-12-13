@@ -1,4 +1,12 @@
 <div class="container">
+
+<select name="Choice">
+    <option value="Authors">Authors</option>
+    <option value="Books">Books</option>
+  </select>
+  <input type="text" placeholder="Search..">
+  <button (click)="runSearch()">Search</button>
+
   <table class="table table-bordered">
     <tr>
       <th>Title</th>
@@ -8,4 +16,5 @@
     </tr>
     <tr *ngFor="let book of books"><td>{{book.title}}</td> <td>{{book.author.name}}</td><td>{{book.pages}}</td> <td>{{book.price}}</td></tr>
   </table>
+
 </div>

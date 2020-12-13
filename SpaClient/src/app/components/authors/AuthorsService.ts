@@ -1,5 +1,7 @@
 import {HttpService} from './../../http.service';
 import {Injectable} from '@angular/core';
+import {Author} from './Author';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +17,14 @@ export class AuthorsService {
 
   getAuthors() {
     return this.service.sendGetRequest(this.authors);
+  }
+
+  postAuthor(data: string) {
+    let jsonData = JSON.stringify(
+      {
+        name: data
+      }
+    );
+    return this.service.sendPostRequest(jsonData, this.authors);
   }
 }

@@ -27,7 +27,7 @@ namespace SpaServer.Controllers
     [HttpGet("{name}")]
     public async Task<ActionResult<List<Books>>> GetBooks(string name)
     {
-      var books = await _context.Books.Where(data => data.Title.ToLower().Contains(name.ToLower())).OrderBy(data => data.Title).ToListAsync();
+      var books = await _context.Books.Where(data => data.Title.ToLower().Contains(name.ToLower())).Include(e => e.Author).OrderBy(data => data.Title).ToListAsync();
 
       if (books == null)
       {

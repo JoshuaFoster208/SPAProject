@@ -5,13 +5,16 @@ import {AuthorsComponent} from './components/authors/AuthorsComponent';
 import {BooksByAuthorComponents} from './components/booksbyauthor/BooksByAuthorComponents'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { environment as env } from '../environments/environment';
 import { HomeComponent } from './home/home.component';
 import {AuthenticatedComponent } from './authenticated/authenticated.component';
 import {OAuthModule} from 'angular-oauth2-oidc';
-//import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {AddAuthorsComponent} from './components/Admin/AddAuthorComponent';
+import {AddBookComponent} from './components/Admin/AddBookComponent';
+import {SearchComponent} from './components/Search/SearchComponent';
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,20 @@ import {OAuthModule} from 'angular-oauth2-oidc';
     AuthorsComponent,
     BooksByAuthorComponents,
     AuthenticatedComponent,
-    HomeComponent
+    HomeComponent,
+    AddAuthorsComponent,
+    AddBookComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    //NgbModule,
     HttpClientModule,
     OAuthModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule,
+
   ],
   providers: [],//{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

@@ -17,4 +17,16 @@ export class BooksService {
 	getBooks() {
 		return this.service.sendGetRequest(this.books);
 	}
+
+  postBook(title: string, authorId: number, pages: number, price: number) {
+    let jsonData = JSON.stringify(
+      {
+        title: title,
+        authorId: authorId,
+        pages: pages,
+        price: price
+      }
+    );
+    return this.service.sendPostRequest(jsonData, this.books);
+  }
 }

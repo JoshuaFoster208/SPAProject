@@ -1,12 +1,13 @@
+<div class="container">
+  <table class="table table-bordered">
+    <tr>
+      <th>Author</th>
+      <th>Number of Books</th>
+    </tr>
+    <tr *ngFor="let author of authors"(click)="onSelect(author)"><td>{{author.name}}</td> <td>{{author.numberOfBooks}}</td></tr>
+  </table>
 
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Number of Books</th>
-  </tr>
-  <tr *ngFor="let author of authors"(click)="onSelect(author)"><td>{{author.name}}</td> <td>{{author.numberOfBooks}}</td></tr>
-</table>
-
+</div>
 
 
 
