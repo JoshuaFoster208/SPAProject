@@ -9,6 +9,8 @@ import {SearchService} from './SearchService';
   templateUrl: './Search.html',
   providers:  [ SearchService ]
 })
+
+/*Component that takes an input and searches the database for the value*/
 export class SearchComponent implements OnInit {
   books: Subscription;
   searchValue = new FormControl('');
@@ -18,15 +20,15 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.books = this.service.getBooks(this.searchValue).subscribe(books => this.books = books);
-
   }
 
+  /*on input change call the service to search for books*/
   ngOnChanges() {
     this.test = false;
     this.books = this.service.getBooks(this.searchValue).subscribe(books => this.books = books);
   }
 
+  /*function that onclick will search the database*/
     runSearch(){
       this.books = this.service.getBooks(this.searchValue).subscribe(books => this.books = books);
       this.searchValue.setValue('');

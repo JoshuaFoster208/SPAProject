@@ -14,7 +14,6 @@ import {OAuthModule} from 'angular-oauth2-oidc';
 import {AddAuthorsComponent} from './components/Admin/AddAuthorComponent';
 import {AddBookComponent} from './components/Admin/AddBookComponent';
 import {SearchComponent} from './components/Search/SearchComponent';
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -31,7 +30,6 @@ import {SearchComponent} from './components/Search/SearchComponent';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //NgbModule,
     HttpClientModule,
     OAuthModule.forRoot(),
     ReactiveFormsModule,

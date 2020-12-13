@@ -1,3 +1,4 @@
+/*book object*/
 export interface Book {
 	bookId: number;
 	authorId: number;

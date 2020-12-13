@@ -4,6 +4,7 @@ import {BooksByAuthorComponents} from './components/booksbyauthor/BooksByAuthorC
 import  {AuthenticatedComponent} from './authenticated/authenticated.component';
 import  {HomeComponent} from './home/home.component';
 
+/*Sets the routes of the SPA application*/
 const routes: Routes = [
   { path: 'booksByAuthor', component: BooksByAuthorComponents },
   { path: 'auth', component: AuthenticatedComponent},

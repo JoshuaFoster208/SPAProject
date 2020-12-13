@@ -15,10 +15,12 @@ export class AuthorsService {
     private service: HttpService)
   {}
 
+  /*retrieve all authors*/
   getAuthors() {
     return this.service.sendGetRequest(this.authors);
   }
 
+  /*post json of author value*/
   postAuthor(data: string) {
     let jsonData = JSON.stringify(
       {

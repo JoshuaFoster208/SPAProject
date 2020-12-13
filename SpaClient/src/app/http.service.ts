@@ -15,17 +15,17 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class HttpService {A
-
-
-
 
   constructor(private httpClient: HttpClient) { }
 
+  /*sends http get request to the url passed in*/
   sendGetRequest(url: string): Observable<any> {
     return this.httpClient.get(url);
   }
 
+  /*sends http post request of the data passed in to the url passed in*/
   sendPostRequest(data: string, url: string): Subscription {
     return this.httpClient.post(url,
       data,

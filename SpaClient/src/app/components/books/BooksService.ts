@@ -14,10 +14,12 @@ export class BooksService {
 		private service: HttpService)
 	{}
 
+	/*retrieves all books from the table*/
 	getBooks() {
 		return this.service.sendGetRequest(this.books);
 	}
 
+	/*converts all values to json and then posts to the authors table*/
   postBook(title: string, authorId: number, pages: number, price: number) {
     let jsonData = JSON.stringify(
       {

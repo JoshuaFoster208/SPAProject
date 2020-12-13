@@ -13,6 +13,7 @@ export class BooksByAuthorService {
     private service: HttpService)
   {}
 
+  /*http call to retrieve the list of books with the given authorId*/
   getBooksByAuthor(ID: number) {
     return this.service.sendGetRequest(this.books+ "/" + ID);
   }

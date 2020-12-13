@@ -7,15 +7,14 @@ import { Router } from '@angular/router';
   templateUrl: './authenticated.component.html',
   styleUrls: ['./authenticated.component.css']
 })
+
+/*Component that will display while authenticated*/
+
 export class AuthenticatedComponent implements OnInit {
-  selectedTab = "authors";
 
   constructor() { }
 
   ngOnInit(): void {
-  }
-  setSelectedTab(selected: string){
-    this.selectedTab = selected;
   }
 
 }

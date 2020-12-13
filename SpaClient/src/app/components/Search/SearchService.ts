@@ -15,6 +15,7 @@ export class SearchService {
     private service: HttpService)
   {}
 
+  /*http get call to search for a specific title*/
   getBooks(title: FormControl) {
     return this.service.sendGetRequest(this.books + '/' + title);
   }
