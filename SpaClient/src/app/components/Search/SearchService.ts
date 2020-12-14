@@ -17,6 +17,6 @@ export class SearchService {
 
   /*http get call to search for a specific title*/
   getBooks(title: FormControl) {
-    return this.service.sendGetRequest(this.books + '/' + title);
+    return this.service.sendGetRequest(this.books + '/' + title.value);
   }
 }

@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'booksByAuthor', component: BooksByAuthorComponents },
   { path: 'auth', component: AuthenticatedComponent},
   { path: 'home', component: HomeComponent},
-  { path: '', redirectTo: '/', pathMatch: 'full'},
 ];
 /*,{useHash:true}*/
 @NgModule({

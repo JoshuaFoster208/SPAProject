@@ -1,13 +1,9 @@
 <div class="container">
 
-<select name="Choice">
-    <option value="Authors">Authors</option>
-    <option value="Books">Books</option>
-  </select>
   <input type="text" placeholder="Search.." [formControl]="searchValue">
   <button (click)="runSearch()">Search</button>
 
-  <table class="table table-bordered">
+  <table *ngIf="searched" class="table table-bordered">
     <tr>
       <th>Title</th>
       <th>Author</th>

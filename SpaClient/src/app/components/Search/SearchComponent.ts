@@ -14,6 +14,7 @@ import {SearchService} from './SearchService';
 export class SearchComponent implements OnInit {
   books: Subscription;
   searchValue = new FormControl('');
+  searched : boolean;
   @Input() test: boolean;
 
   constructor(private service: SearchService) {
@@ -32,7 +33,8 @@ export class SearchComponent implements OnInit {
     runSearch(){
       this.books = this.service.getBooks(this.searchValue).subscribe(books => this.books = books);
       this.searchValue.setValue('');
-    this.test=true;
+      this.test = true;
+      this.searched = true;
   }
 
 }

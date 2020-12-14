@@ -1,3 +1,8 @@
+<div class="container" *ngIf="selectedAuthor">
+  <h2  >{{selectedAuthor.name}}</h2>
+  <booksByAuthorList [responseId]="authId"></booksByAuthorList>
+</div>
+
 <div class="container">
   <table class="table table-bordered">
     <tr>
@@ -7,11 +12,4 @@
     <tr *ngFor="let author of authors"(click)="onSelect(author)"><td>{{author.name}}</td> <td>{{author.numberOfBooks}}</td></tr>
   </table>
 
-</div>
-
-
-
-<div *ngIf="selectedAuthor">
-  <h2>{{selectedAuthor.name}}</h2>
-  <booksByAuthorList [responseId]="authId"></booksByAuthorList>
 </div>
