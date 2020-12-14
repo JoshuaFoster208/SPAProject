@@ -29,11 +29,9 @@
   color: black;
 
 }
-/*
-$('#image').click(function() {
-$('#foo').css({
-'background-color': 'red',
-'color': 'white',
-'font-size': '44px'
-});
-}); */
+
+.author:hover{
+  color: darkblue;
+  background-color: darkgrey;
+  cursor: pointer;
+}

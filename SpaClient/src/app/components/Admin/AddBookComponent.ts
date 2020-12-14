@@ -24,6 +24,12 @@ export class AddBookComponent implements OnInit {
 
   /*retrieves the authors on initialization to populate the select value*/
   ngOnInit() {
+  this.loadAuthors();
+  }
+
+
+    /*retrieves the authors on initialization to populate the select value*/
+  loadAuthors() {
     this.authors = this.service2.getAuthors().subscribe(books => this.authors = books);
   }
 
@@ -33,6 +39,7 @@ export class AddBookComponent implements OnInit {
     this.bookName.setValue('');
     this.numPages.setValue('');
     this.price.setValue('');
+    this.selectedAuthor = null;
   }
 
 }
