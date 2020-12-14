@@ -24,7 +24,7 @@ namespace SpaServer.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Authors>>> GetAuthors()
         {
-            return await _context.Authors.ToListAsync();
+            return await _context.Authors.OrderBy(data => data.Name).ToListAsync();
         }
 
         //GET: api/Authors/5

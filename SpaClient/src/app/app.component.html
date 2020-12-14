@@ -1,23 +1,35 @@
-<div>
-  <div>
-    <a routerLink="/auth"><button class="btn btn-success pull-right" > gotoAuth</button></a>
-  </div>
-  <select name="Choice">
-    <option value="Authors">Authors</option>
-    <option value="Books">Books</option>
-  </select>
-  <input type="text" placeholder="Search..">
+<div *ngIf="getUserName()">
+  <button (click)="logout()">Logout</button>
+  <h1>Hello, {{getUserName()}}</h1>
 </div>
-<div>
-  <div (click)="setSelectedTab('authors')">Authors
-    <div *ngIf="selectedTab=='authors'">
-      <authorsList></authorsList>
-    </div>
+<div class="container>">
+<a *ngIf="selectedTab=='admin'" routerLink="" (click)="setSelectedTab('authors')"><button style="margin-right: 50%" class="btn btn-success pull-right" >Return</button></a>
+</div>
+<div *ngIf="!getUserName()">
+  <button (click)="login()">Login</button>
+</div>
+
+<div *ngIf="selectedTab!='admin'" >
+  <div *ngIf="getUserName()" class="container">
+    <br>
+    <a routerLink="/auth" (click)="setSelectedTab('admin')"><button style="margin-right: 50%" class="btn btn-success pull-right" >Admin Tools</button></a>
+    <br>
   </div>
-  <div (click)="setSelectedTab('books')">Books
-    <div *ngIf="selectedTab=='books'">
-      <booksList></booksList>
+  <SearchBooks></SearchBooks>
+  <div>
+    <br>
+    <div class="titleContainer">
+      <div class="row">
+        <div [ngClass]="statusClass1" (click)="setActiveClass1()" class ="col-sm" style="margin-left: 10% " (click)="setSelectedTab('authors')"> <h5><u><b>Authors</b></u></h5></div>
+        <div [ngClass]="statusClass2" (click)="setActiveClass2()" class ="col-sm" style="margin-right: 40% " (click)="setSelectedTab('books')"> <h5><u><b>Books</b></u></h5></div>
+      </div>
     </div>
+        <div *ngIf="selectedTab=='authors'">
+        <authorsList></authorsList>
+      </div>
+      <div *ngIf="selectedTab=='books'">
+        <booksList></booksList>
+      </div>
   </div>
 </div>
 <router-outlet></router-outlet>

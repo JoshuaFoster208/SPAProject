@@ -1,0 +1,22 @@
+<div>
+  <label>
+    <input type="text" placeholder="Title" [formControl]="bookName"  />
+  </label>
+  <br>
+  <label>
+    <input type="text" placeholder="Number of Pages" [formControl]="numPages"  />
+  </label>
+  <br>
+  <label>
+    <input type="text" placeholder="Price" [formControl]="price"  />
+  </label>
+  <br>
+  <select [(ngModel)]="selectedAuthor" placeholder="Author">
+    <option *ngFor="let author of authors" [ngValue]="author" >{{author.name}}</option>
+  </select>
+  <button (click)="onClick()" >Save</button>
+</div>
+
+
+
+

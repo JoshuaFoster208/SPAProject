@@ -27,7 +27,7 @@ namespace SpaServer.Controllers
     [HttpGet("{AuthID}")]
     public async Task<ActionResult<List<Books>>> GetBooks(int AuthID)
     {
-      var books = await _context.Books.Where(data => data.AuthorId == AuthID).ToListAsync();
+      var books = await _context.Books.Where(data => data.AuthorId == AuthID).OrderBy(data => data.Title).ToListAsync();
 
       if (books == null)
       {

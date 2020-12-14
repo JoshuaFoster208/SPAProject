@@ -1,5 +1,9 @@
 <div class="container">
-  <table class="table table-bordered">
+
+  <input type="text" placeholder="Search.." [formControl]="searchValue">
+  <button (click)="runSearch()">Search</button>
+
+  <table *ngIf="searched" class="table table-bordered">
     <tr>
       <th>Title</th>
       <th>Author</th>
@@ -8,4 +12,5 @@
     </tr>
     <tr *ngFor="let book of books"><td>{{book.title}}</td> <td>{{book.author.name}}</td><td>{{book.pages}}</td> <td>{{book.price}}</td></tr>
   </table>
+
 </div>
